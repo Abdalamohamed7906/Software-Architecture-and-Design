@@ -10,29 +10,18 @@
 *.tar.gz
 *.rar
 
-# IDE Files
 .idea/
 *.iml
 .vscode/
-.settings/
-.project
-.classpath
 
-# Build directories
 target/
 build/
-bin/
-out/
 
-# OS Files
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
 
 # Temporary files
 *.tmp
 *.bak
 *.swp
-*~

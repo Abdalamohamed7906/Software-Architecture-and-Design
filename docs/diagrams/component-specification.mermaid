@@ -1,0 +1,80 @@
+graph TB
+    subgraph Presentation["🖥️ Presentation Layer"]
+        UI["<b>MainUIController</b><br/>────────────<br/>+ initialize()<br/>+ handleUserInput()<br/>+ displayError()<br/>+ updateView()"]
+        
+        Chart["<b>ChartDisplayComponent</b><br/>📊<br/>────────────<br/>IChartDisplay<br/>────────────<br/>+ renderChart()<br/>+ renderComparisonChart()<br/>+ clearChart()<br/>+ updateChart()"]
+        
+        Input["<b>InputFormComponent</b><br/>📝<br/>────────────<br/>IInputHandler<br/>────────────<br/>+ getStockSymbol()<br/>+ getDateRange()<br/>+ validateInput()<br/>+ displayValidationError()"]
+    end
+    
+    subgraph Business["⚙️ Business Logic Layer"]
+        Manager["<b>StockDataManager</b><br/>📈<br/>────────────<br/>IStockDataManager<br/>────────────<br/>+ fetchStockData()<br/>+ getStoredData()<br/>+ isDataAvailable()<br/>+ validateSymbol()<br/>+ clearCache()"]
+        
+        Analyzer["<b>PriceAnalyzer</b><br/>🔍<br/>────────────<br/>AbstractPriceAnalyzer<br/>────────────<br/>+ calculatePriceChange()<br/>+ findHighLow()<br/>+ normalizeData()<br/>+ formatForDisplay()"]
+        
+        Compare["<b>ComparisonService</b><br/>⚖️<br/>────────────<br/>IComparisonService<br/>────────────<br/>+ compareStocks()<br/>+ alignDataRanges()<br/>+ calculateRelativePerformance()"]
+    end
+    
+    subgraph Data["💾 Data Access Layer"]
+        Repo["<b>LocalRepository</b><br/>🗄️<br/>────────────<br/>IRepository<br/>────────────<br/>+ save()<br/>+ retrieve()<br/>+ exists()<br/>+ delete()<br/>+ getAllSymbols()"]
+        
+        API["<b>APIService</b><br/>🌐<br/>────────────<br/>IAPIService<br/>────────────<br/>+ fetchHistoricalData()<br/>+ validateSymbol()<br/>+ isConnectionAvailable()<br/>+ getRateLimitRemaining()"]
+        
+        Cache["<b>CacheManager</b><br/>⚡<br/>────────────<br/>ICacheManager<br/>────────────<br/>+ put()<br/>+ get()<br/>+ invalidate()<br/>+ clear()<br/>+ isExpired()"]
+    end
+    
+    subgraph Domain["📦 Domain Models"]
+        Stock["<b>StockData</b><br/>────────────<br/>- symbol: String<br/>- date: LocalDate<br/>- open/high/low/close: double<br/>- volume: long"]
+        
+        Range["<b>DateRange</b><br/>────────────<br/>- startDate: LocalDate<br/>- endDate: LocalDate<br/>- MAX_DAYS: 730<br/>+ validate()"]
+    end
+    
+    UI -->|uses| Manager
+    UI -->|displays| Chart
+    UI -->|gets input| Input
+    
+    Chart -.->|displays| Stock
+    Input -.->|creates| Range
+    
+    Manager -->|uses| Repo
+    Manager -->|uses| API
+    Manager -->|uses| Cache
+    Manager -->|analyzes with| Analyzer
+    Manager -.->|works with| Stock
+    Manager -.->|validates| Range
+    
+    Compare -->|uses| Manager
+    Compare -->|uses| Analyzer
+    Compare -.->|compares| Stock
+    
+    Repo -.->|stores/retrieves| Stock
+    API -.->|fetches| Stock
+    Cache -.->|caches| Stock
+    
+    Repo -.->|persists to| DB[(SQLite or<br/>JSON Files)]
+    API -.->|calls| EXT[Yahoo Finance<br/>API]
+    Cache -.->|stores in| MEM[(Memory)]
+    
+    style Presentation fill:#e1f5ff,stroke:#0066cc,stroke-width:3px
+    style Business fill:#fff4e1,stroke:#cc8800,stroke-width:3px
+    style Data fill:#f0e1ff,stroke:#8800cc,stroke-width:3px
+    style Domain fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
+    
+    style UI fill:#bbdefb
+    style Chart fill:#bbdefb
+    style Input fill:#bbdefb
+    
+    style Manager fill:#ffe082
+    style Analyzer fill:#ffe082
+    style Compare fill:#ffe082
+    
+    style Repo fill:#e1bee7
+    style API fill:#e1bee7
+    style Cache fill:#e1bee7
+    
+    style Stock fill:#c8e6c9
+    style Range fill:#c8e6c9
+    
+    style DB fill:#a5d6a7
+    style EXT fill:#a5d6a7
+    style MEM fill:#a5d6a7
