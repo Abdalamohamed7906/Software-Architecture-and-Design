@@ -10,50 +10,46 @@
 
 | Member | Primary Role | Secondary Role |
 |--------|-------------|----------------|
-| Anwar | Requirements Lead | Documentation |
-| Abdala | Architecture Lead | Implementation |
+| Abdala | Requirements Lead | Documentation |
+| Anwar | Architecture Lead | Implementation |
 | Meshari | Implementation Lead | Testing |
 | Omran | Project Management | Code Review |
 
 ---
 
 ## Task Breakdown
+Anwar (40%) - Code Implementation & Diagrams Lead
 
-### 1. Requirements & Scope (Anwar - Lead, All - Review)
+All 12 Java files (interfaces and abstract classes)
+All PROVIDED/REQUIRED annotations
+All 3 architecture diagrams + guides
+Main.java and MainUIController.java
+Technical documentation
+TASK_ALLOCATION.md
 
-**Assigned to**: Anwar  
-**Support**: All team members  
-**Deadline**: 15.2.26  
-**Deliverables**:
-- [ ] Complete REQUIREMENTS.md document
-- [ ] Define functional requirements (FR1-FR5)
-- [ ] Define non-functional requirements (NFR1-NFR5)
-- [ ] Create user stories
-- [ ] Identify in-scope and out-of-scope items
-- [ ] Risk assessment
-- [ ] Requirements presentation for team review
+Abdalla (30%) - Requirements & Documentation Lead
 
-**Checklist**:
-- [ ] All requirements clearly documented
-- [ ] Requirements validated by team
-- [ ] Requirements aligned with project goals
-- [ ] Acceptance criteria defined for each requirement
+Complete REQUIREMENTS.md
+User stories and acceptance criteria
+All functional and non-functional requirements
+Review and quality assurance
+GitHub setup
 
----
+Meshari (15%) - Testing & Integration
 
-### 2. Project Setup (Omran - Lead, All - Participate)
+Code compilation verification
+Main.java testing
+PROVIDED/REQUIRED annotation checks
+Integration testing
 
-**Assigned to**: Omran  
-**Support**: All team members  
-**Deadline**: 14.2.26  
-**Deliverables**:
-- [ ] Create GitHub repository
-- [ ] Set up branch structure (main, develop, feature branches)
-- [ ] Configure repository settings (protect main branch)
-- [ ] Set up Project Management tool (GitHub Projects/Jira/Trello)
-- [ ] Add all team members as collaborators
-- [ ] Create initial issues/tasks in project board
-- [ ] Document GitHub workflow in README
+Omran (15%) - Project Management & Documentation
+
+CODE_OF_CONDUCT.md
+MEETING_MINUTES.md
+CODE_REVIEW_PREP.md
+SUBMISSION_CHECKLIST.md
+
+
 
 **GitHub Branch Strategy**:
 ```
