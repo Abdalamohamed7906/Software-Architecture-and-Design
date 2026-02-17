@@ -11,7 +11,7 @@
 | Member | Role | Contribution % | Hours | Work Focus |
 |--------|------|----------------|-------|------------|
 | Anwar | **ALL Java Code Implementation** + Diagrams Lead | 40% | ~25 hours | **100% of coding** |
-| Abdalla | Requirements & Documentation Lead | 30% | ~15 hours | Requirements only |
+| Abdala | Requirements & Documentation Lead | 30% | ~15 hours | Requirements only |
 | Meshari | Testing & Integration | 15% | ~8 hours | Testing only |
 | Omran | Project Management & Documentation | 15% | ~8 hours | Management only |
 
