@@ -173,9 +173,9 @@
 ## Sprint 1 Status: ✅ COMPLETE
 
 ### All Deliverables Met:
-✅ Requirements documented (Abdalla)  
+✅ Requirements documented (Abdala)  
 ✅ Architecture designed (Anwar)  
-✅ **ALL Java code implemented by Anwar (100% of coding)**  
+✅ ALL Java code implemented by Anwar (100% of coding)
 ✅ All diagrams created (Anwar)  
 ✅ Testing completed (Meshari)  
 ✅ Project management docs (Omran)  
@@ -202,7 +202,7 @@
 |----------|-------|--------|
 | **Java Source Files** | **15** | **Anwar (100%)** |
 | **Diagram Files** | **8** | **Anwar (100%)** |
-| **Requirements Docs** | **1** | **Abdalla** |
+| **Requirements Docs** | **1** | **Abdala** |
 | **Project Mgmt Docs** | **6** | **Omran** |
 | **Architecture Docs** | **1** | **Anwar** |
 | **Total** | **31+** | **Team** |
