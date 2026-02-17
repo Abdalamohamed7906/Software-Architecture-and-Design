@@ -19,7 +19,7 @@
 
 ---
 
-## Anwar (40%) - Code Implementation & Diagrams
+## Anwar - Code Implementation & Diagrams
 
 ### Tasks Completed:
 ✅ **ALL Java Code Implementation (15 files)**
@@ -73,7 +73,7 @@
 
 ---
 
-## Abdala (30%) - Requirements & Documentation
+## Abdala - Requirements & Documentation
 
 ### Tasks Completed:
 ✅ **Requirements Specification (Primary Work)**
@@ -108,7 +108,7 @@
 
 ---
 
-## Meshari (15%) - Testing & Integration
+## Meshari - Testing & Integration
 
 ### Tasks Completed:
 ✅ **Code Verification & Testing**
@@ -138,7 +138,7 @@
 
 ---
 
-## Omran (15%) - Project Management & Documentation
+## Omran - Project Management & Documentation
 
 ### Tasks Completed:
 ✅ **Project Management Documents**
