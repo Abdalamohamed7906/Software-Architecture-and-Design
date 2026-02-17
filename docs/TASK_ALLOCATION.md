@@ -71,12 +71,9 @@
 - Design rationale and decisions
 - ANWAR_COMPLETE_PORTFOLIO.md
 
-### Deliverables: 23+ files created (ALL Java code + all diagrams)
-### Time Invested: ~25 hours
-
 ---
 
-## Abdalla (30%) - Requirements & Documentation
+## Abdala (30%) - Requirements & Documentation
 
 ### Tasks Completed:
 ✅ **Requirements Specification (Primary Work)**
@@ -108,8 +105,6 @@
 
 **No Java code implementation - focused entirely on requirements engineering**
 
-### Deliverables: 1 comprehensive requirements document + GitHub setup + reviews
-### Time Invested: ~15 hours
 
 ---
 
@@ -140,7 +135,6 @@
 **No code implementation - focused entirely on testing and quality assurance**
 
 ### Deliverables: Testing and quality verification
-### Time Invested: ~8 hours
 
 ---
 
@@ -166,61 +160,13 @@
 - Project board setup
 - Issue tracking
 
-### Deliverables: 6+ project management files
-### Time Invested: ~8 hours
 
----
-
-## Justification for Distribution
-
-### Why Anwar gets 40%:
-- **Wrote ALL 15 Java files from scratch** (100% of code implementation)
-- Most technically complex and demanding work
-- Created ALL architecture diagrams (3 Mermaid files)
-- Created ALL diagram documentation (5 guide files)
-- Added PROVIDED/REQUIRED annotations to every file
-- Implemented all domain, service, data, and presentation layers
-- Created Main.java demonstration
-- Most time-intensive tasks (coding + diagrams)
-- 23+ files created personally
-- 25 hours of intensive development work
-
-**Anwar is the sole code author for this project**
-
-### Why Abdalla gets 30%:
-- Critical requirements engineering work
-- Foundation and blueprint for entire project
-- Comprehensive REQUIREMENTS.md (largest doc)
-- Research and analysis work
-- GitHub repository setup and configuration
-- Quality assurance and review
-- 15 hours of detailed documentation and setup
-
-**Abdalla focused on requirements, NOT code implementation**
-
-### Why Meshari gets 15%:
-- Essential testing and quality assurance role
-- Verified all code compiles and runs correctly
-- Quality checks on all 15 Java files
-- Support and feedback during development
-- 8 hours of focused testing work
-
-**Meshari focused on testing, NOT code implementation**
-
-### Why Omran gets 15%:
-- Project management and coordination
-- Created 6+ project management documents
-- Team organization and meeting coordination
-- Documentation infrastructure
-- 8 hours of organizational work
-
-**Omran focused on project management, NOT code implementation**
 
 ---
 
 **CRITICAL POINT: Anwar wrote 100% of the Java code (all 15 files). The other team members contributed requirements, testing, and project management - NOT code implementation.**
 
-**Total: 100% = ~56 hours of team effort**
+
 
 ---
 
@@ -262,7 +208,7 @@
 | **Total** | **31+** | **Team** |
 
 **Code Implementation: 100% Anwar**  
-**Requirements: 100% Abdalla**  
+**Requirements: 100% Abdala**  
 **Testing: 100% Meshari**  
 **Project Management: 100% Omran**
 
