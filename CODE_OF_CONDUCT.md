@@ -69,10 +69,18 @@ We are committed to creating a collaborative, respectful, and productive team en
 4. **Respect**: Disagree professionally, no personal attacks
 
 ## Consequences
-- **First Warning**: Reminder of commitments
-- **Second Warning**: Team meeting to discuss issues
-- **Persistent Issues**: Report to module instructor
+-## Consequences for Violations
 
+To maintain a professional and respectful working environment, the following steps will be taken if the Code of Conduct is not followed:
+
+1. **Informal Warning:**  
+   The issue will be raised privately with the individual to clarify expectations and resolve misunderstandings.
+2. **Team Discussion:**  
+   If the behaviour continues, the issue will be discussed during a team meeting to agree on corrective actions.
+3. **Escalation:**  
+   Repeated or serious breaches may be reported to the module tutor, along with documented evidence (e.g. meeting minutes or GitHub activity).
+   All actions will be handled fairly, respectfully, and with the goal of maintaining effective collaboration.
+ 
 ## Quality Standards
 - All code must compile without errors
 - Code must follow Java naming conventions
@@ -81,10 +89,18 @@ We are committed to creating a collaborative, respectful, and productive team en
 - No committing directly to `main` branch
 
 ## Meeting Protocols
-- **Agenda**: Shared 24 hours before meeting
-- **Minutes**: Recorded and shared after each meeting
-- **Action Items**: Clear ownership and deadlines
-- **Punctuality**: Start on time, max 5 minutes grace period
+- ## Meeting Protocols
+
+To ensure effective communication and collaboration, the team agrees to the following meeting practices:
+
+- Meetings will be held regularly (online or in-person) as required during each sprint.
+- An agenda will be agreed before each meeting.
+- Attendance is expected unless prior notice is given.
+- Key decisions, task allocations, and action items will be recorded as meeting minutes.
+- Meeting minutes will be stored in the repository under the `/docs` directory.
+- All members are responsible for reviewing meeting minutes and completing assigned actions.
+
+Decisions will be made by group consensus where possible. If consensus cannot be reached, a majority agreement will be used.
 
 ## Decision Making
 - **Technical Decisions**: Discussed and agreed by majority
