@@ -5,6 +5,7 @@
 - Abdala
 - Meshari
 - Omran
+- ismail
 
 ## Our Commitment
 We are committed to creating a collaborative, respectful, and productive team environment where all members can contribute effectively to the project.
@@ -12,15 +13,14 @@ We are committed to creating a collaborative, respectful, and productive team en
 ## Communication Guidelines
 
 ### Meeting Schedule
-- **Weekly Team Meetings**: [Add day/time]
-- **Location**: [Add location or online platform]
+- **Weekly Team Meetings**: [monday 2pm thursday 2pm  friday 2pm]
+- **Location**: [In Person/MS Teams ]
 - **Attendance**: All members expected to attend. If unable, notify team 24 hours in advance.
 
 ### Communication Channels
-- **Primary**: [WhatsApp/Discord/Slack group]
+- **Primary**: [WhatsApp/MS teams]
 - **Code Reviews**: GitHub pull requests
 - **Documentation**: GitHub repository
-- **Emergency Contact**: [Add emergency contact method]
 
 ### Response Times
 - Messages during working hours (9 AM - 9 PM): Within 4 hours
@@ -95,11 +95,10 @@ We are committed to creating a collaborative, respectful, and productive team en
 By contributing to this project, all team members agree to abide by this Code of Conduct.
 
 **Signatures:**
-- [ ] Anwar - Date: ___________
-- [ ] Abdala - Date: ___________
-- [ ] Meshari - Date: ___________
-- [ ] Omran - Date: ___________
+- [ ] Anwar - Date: _10/02/2026__________
+- [ ] Abdala - Date: __10/02/2026_________
+- [ ] Meshari - Date: __10/02/2026
+- [ ] ismail - Date:   10/02/2026_________
+- [ ] Omran - Date: _10/02/2026__________
 
 ---
-*Last Updated: [Date]*
-*Version: 1.0*
