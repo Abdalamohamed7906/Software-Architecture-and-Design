@@ -103,9 +103,19 @@ To ensure effective communication and collaboration, the team agrees to the foll
 Decisions will be made by group consensus where possible. If consensus cannot be reached, a majority agreement will be used.
 
 ## Decision Making
-- **Technical Decisions**: Discussed and agreed by majority
-- **Architecture Changes**: Full team agreement required
-- **Task Reallocation**: Team consensus needed
+- ## Decision-Making Process
+
+Project decisions will be made in a transparent and collaborative manner:
+
+- Decisions will be discussed during scheduled team meetings or through the agreed communication channels.
+- All team members are encouraged to contribute their views before a decision is made.
+- Where possible, decisions will be made by group consensus.
+- If consensus cannot be reached, a majority vote will be used.
+- In time-critical situations, a designated coordinator may make a temporary decision, which will be reviewed by the team at the next meeting.
+- All significant decisions will be documented in the meeting minutes.
+
+This process ensures fairness, accountability, and continuity throughout the project.
+
 
 ## Agreement
 By contributing to this project, all team members agree to abide by this Code of Conduct and are fully made aware of 
