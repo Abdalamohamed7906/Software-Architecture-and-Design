@@ -4,7 +4,7 @@
 **Date:** 10/02/2026  
 **Time:** 18:00 (UK)  
 **Location:** Discord / Teams / In-person  
-**Attendees:** Abdalla, (add names)  
+**Attendees:** Abdalla, Anwar, Meshari, Ismail, Omran 
 **Apologies:** None  
 
 ### Agenda
