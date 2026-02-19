@@ -92,7 +92,8 @@ We are committed to creating a collaborative, respectful, and productive team en
 - **Task Reallocation**: Team consensus needed
 
 ## Agreement
-By contributing to this project, all team members agree to abide by this Code of Conduct.
+By contributing to this project, all team members agree to abide by this Code of Conduct and are fully made aware of 
+the penalties and consequences if not adhered to
 
 **Signatures:**
 - [ ] Anwar - Date: _10/02/2026__________
