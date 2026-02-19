@@ -103,3 +103,5 @@ the penalties and consequences if not adhered to
 - [ ] Omran - Date: _10/02/2026__________
 
 ---
+docs: confirm sprint 1 agreement of code of conduct
+
