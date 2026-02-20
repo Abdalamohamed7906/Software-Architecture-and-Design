@@ -274,4 +274,4 @@ graph LR
 ---
 
 **Sprint 1 - February 2026**  
-**Team**: Anwar, Abdalla, Meshari, Omran
+**Team**: Anwar, Abdala, Meshari, Omran, Ismail
