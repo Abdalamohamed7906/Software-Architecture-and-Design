@@ -1,0 +1,140 @@
+@startuml Stock-Compare Component Diagram
+
+!define COMPONENT_FONT_SIZE 10
+skinparam component {
+  BackgroundColor White
+  BorderColor Black
+  FontSize COMPONENT_FONT_SIZE
+}
+
+title Stock-Compare Application\nUML2 Component Architecture - Sprint 1
+
+' ====================================
+' PRESENTATION LAYER
+' ====================================
+
+package "Presentation Layer" <<Frame>> {
+  
+  [MainUIController] as UI
+  
+  interface "IInputHandler" as IInput
+  [InputHandler] as Input
+  Input - IInput
+  
+  interface "IChartDisplay" as IChart
+  [ChartDisplay] as Chart
+  Chart - IChart
+}
+
+' ====================================
+' SERVICE LAYER
+' ====================================
+
+package "Service Layer" <<Frame>> {
+  
+  interface "IStockDataManager" as ISDM
+  [StockDataManager] as SDM
+  SDM - ISDM
+  
+  interface "IPriceAnalyzer" as IPA
+  [PriceAnalyzer] as PA
+  PA - IPA
+  
+  interface "IComparisonService" as IComp
+  [ComparisonService] as Comp
+  Comp - IComp
+}
+
+' ====================================
+' DATA LAYER
+' ====================================
+
+package "Data Layer" <<Frame>> {
+  
+  interface "IAPIService" as IAPI
+  [APIService] as API
+  API - IAPI
+  
+  interface "ICacheManager" as ICache
+  [CacheManager] as Cache
+  Cache - ICache
+  
+  interface "IRepository" as IRepo
+  [Repository] as Repo
+  Repo - IRepo
+}
+
+' ====================================
+' DOMAIN MODELS
+' ====================================
+
+package "Domain Models" <<Frame>> {
+  [StockData] <<entity>>
+  [DateRange] <<value object>>
+  [StockDataException] <<exception>>
+}
+
+' ====================================
+' CONNECTIONS - PRESENTATION LAYER
+' ====================================
+
+UI ..> IInput : requires
+UI ..> IChart : requires
+UI ..> ISDM : requires
+
+' ====================================
+' CONNECTIONS - SERVICE LAYER
+' ====================================
+
+SDM ..> IRepo : requires
+SDM ..> IAPI : requires
+SDM ..> ICache : requires
+SDM ..> IPA : requires
+
+Comp ..> ISDM : requires
+Comp ..> IPA : requires
+
+' ====================================
+' DOMAIN USAGE (OPTIONAL)
+' ====================================
+
+SDM .down.> StockData : uses
+SDM .down.> DateRange : uses
+PA .down.> StockData : uses
+
+' ====================================
+' NOTES
+' ====================================
+
+note right of UI
+  <b>Presentation Layer</b>
+  Coordinates user
+  interactions
+end note
+
+note right of SDM
+  <b>Service Layer</b>
+  Business logic and
+  data orchestration
+end note
+
+note right of API
+  <b>Data Layer</b>
+  External and local
+  data sources
+end note
+
+legend bottom
+  <b>Component Architecture Summary</b>
+  • 9 Components Implemented
+  • 8 Interfaces Defined
+  • 3 Architectural Layers
+  • 9 Dependency Connections
+  
+  <b>Notation:</b>
+  • Rectangle = Component
+  • Lollipop (○) = Provided Interface
+  • Dashed Arrow = "requires" dependency
+end legend
+
+@enduml
