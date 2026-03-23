@@ -1,335 +1,222 @@
-# StockCompare
+# Sprint 2 — Software Architecture Development
 
-> **Share Price Technical Analysis Web Application**
+## StockCompare — Share Price Analysis Application
 
-A robust and scalable Java-based web application for comparing and analyzing stock prices over time. Built as part of the Software Architecture and Design coursework.
-
-[![Java](https://img.shields.io/badge/Java-11%2B-orange)](https://www.oracle.com/java/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+**Sprint Deadline:** 19.3.26 | **Code Review:** 20.3.26
 
 ---
 
-##  Project Overview
+## Overview
 
-StockCompare enables users to:
--  Fetch daily stock price data for any ticker symbol
-- Store data locally for offline access
--  Visualize price trends with interactive charts
--  Compare performance of two stocks side-by-side
-
-**Course:** Software Architecture and Design  
-**Academic Year:** 2025-2026  
-**Team:** Anwar, Abdala, Meshari, Ismail, Omran  
+This sprint focuses on developing a full software architecture from the requirements specification produced in Sprint 1. The architecture follows **Clean Architecture** and **Service-Oriented Architecture (SOA)** principles, with a clear separation of concerns across all layers.
 
 ---
 
-## Architecture
+## Team Members
 
-StockCompare follows a **layered architecture** with clear separation of concerns:
+- Anwar
+- Abdala
+- Meshari
+- Omran
+- Ismail
+
+---
+
+## Models Produced
+
+### 1. Business Concept Model
+A high-level domain model showing all concepts relevant to the StockCompare system, whether or not they are directly managed by the application.
+
+**Key concepts:**
+- `User` — abstract, with three specialisations: `Visitor`, `RegisteredUser`, `Admin`
+- `RegisteredUser` has one `Account` (1:1) and saves 0..* `SavedStocks`
+- `User` searches 1..* `ShareSymbols`
+- Each `ShareSymbol` has 1..* `PriceData` records
+- `PriceData` links to `DateRange` (1:1) and generates `PriceGraph`, `ComparisonResult`, and `ExportFile`
+- `SavedStock` references 1..* `PriceData` records
+
+---
+
+### 2. Use Case Model
+A full use case diagram with 12 use cases covering all system functionality.
+
+**Actors:** User, RegisteredUser, Visitor, Admin
+
+**Use Cases:**
+| # | Use Case | Actor |
+|---|----------|-------|
+| 1 | Create Account | Visitor |
+| 2 | Manage Account | RegisteredUser |
+| 3 | Search Share Symbol | User |
+| 4 | Select Date Range | User |
+| 5 | Retrieve Share Price Data | User |
+| 6 | View Share Price Graph | User |
+| 7 | Compare Share Prices | User |
+| 8 | Save Stock Data | RegisteredUser |
+| 9 | Load Saved Stock Data | RegisteredUser |
+| 10 | Delete Saved Stock | RegisteredUser |
+| 11 | Export Price Data | RegisteredUser |
+| 12 | Update Stock Data Stored | Admin |
+
+Each use case includes a full written description of actor steps and system steps.
+
+---
+
+### 3. System Interfaces
+System interfaces and operations were defined for each use case, mapping each use case to a corresponding interface type.
+
+**Key interfaces defined:**
+- `ICreateAccount` — `createAccount()`, `validateUserDetails()`, `checkUserExists()`
+- `IManageAccount` — `getAccountDetails()`, `updateAccountDetails()`, `validateUpdatedDetails()`
+- `ISearchShare` — `searchShareSymbol()`, `getShareDetails()`
+- `ISelectDateRange` — `validateDateRange()`, `createDateRange()`
+- `IRetrievePriceData` — `getSharePriceData()`, `storeTemporaryPriceData()`
+- `IViewPriceGraph` — `getPriceDataForGraph()`, `generatePriceGraph()`
+- `ICompareSharePrices` — `getMultipleShareData()`, `compareSharePrices()`
+- `ISaveStockData` — `saveStockData()`, `confirmSave()`
+- `ILoadSavedStock` — `getSavedStocks()`, `loadStockData()`
+- `IDeleteSavedStock` — `getSavedStocks()`, `deleteStock()`
+- `IExportPriceData` — `generateExportFile()`, `exportPriceData()`
+- `IUpdateStockData` — `updateStoredStockData()`, `fetchLatestStockData()`
+
+---
+
+### 4. Business Type Model
+Derived directly from the Business Concept Model, using the SOMA stereotype notation.
+
+**Three spheres of responsibility:**
+
+| Sphere | Interface | Core Type | Dependent Types |
+|--------|-----------|-----------|-----------------|
+| User Management | `IAccountService` | `RegisteredUser`, `Admin` | `Account` (type), `Visitor` (category) |
+| Stock Management | `IStockService` | `ShareSymbol` | `SavedStock`, `PriceGraph` |
+| Price / Data Mgmt | `IStockAnalysisService` | `PriceData` | `DateRange`, `ComparisonResult`, `ExportFile` |
+
+**Cross-boundary associations:**
+- `RegisteredUser` —saves→ `SavedStock` (1:0..*)
+- `ShareSymbol` —has→ `PriceData` (1:1..*)
+
+---
+
+### 5. Initial System Architecture
+A layered architecture diagram was produced showing how all components are structured and how interfaces are allocated.
+
+**Layers:**
+```
+Presentation Layer
+  └── SavedStockUI, CreateAccountUI, ManageAccountUI,
+      GraphUI, AdminUI, StockSearchUI, DateRangeUI
+
+System Interfaces
+  └── ILoadSavedStock, IDeleteSavedStock, ISaveStockData,
+      ICreateAccount, IManageAccount, IExportPriceData,
+      IViewPriceGraph, ICompareSharePrices, IUpdateStockData,
+      ISearchShare, IRetrievePriceData, ISelectDateRange
+
+Business Services
+  └── ISavedStockService, IAccountService, IExportService,
+      IStockAnalysisService, IStockService
+
+Data Access Layer
+  └── SavedStockRepository, UserRepository,
+      StockRepository, StockAPIClient
+
+External
+  └── Database (SQLite), External Stock API
+```
+
+**Interface allocation notes:**
+- `IStockAnalysisService` and `IStockService` implement multiple interfaces (compare, retrieve, graph, update)
+- `IAccountService` implements account creation and management
+- `ISavedStockService` implements save, load, and delete operations
+
+---
+
+### 6. Business Interfaces (Collaboration / Sequence Diagrams)
+Sequence diagrams were produced for all 12 use cases showing how business interface operations are invoked.
+
+**Pattern used across all diagrams:**
+```
+User → UI → Service → Repository/API → response back to User
+```
+
+| Use Case | Participants |
+|----------|-------------|
+| Create Account | Visitor, UI, UserService, UserRepository |
+| Manage Account | User, UI, UserService, UserRepository |
+| Search Share Symbol | User, UI, SearchService, StockAPI |
+| Select Date Range | User, UI, DateService |
+| Retrieve Share Price Data | User, UI, PriceService, StockAPI, TempStorage |
+| View Share Price Graph | User, UI, GraphService, PriceService |
+| Compare Share Prices | User, UI, CompareService, StockAPI |
+| Save Stock Data | User, UI, SaveService, Database |
+| Load Saved Stock Data | User, UI, LoadService, Database |
+| Delete Saved Stock | User, UI, DeleteService, Database |
+| Export Price Data | User, UI, ExportService, FileGenerator |
+| Update Stock Data | System, UpdateService, StockAPI, Database |
+
+---
+
+## Implementation
+
+### Clean Architecture
+The codebase follows Clean Architecture principles with strict layer separation:
 
 ```
-┌─────────────────────────────────────┐
-│     Presentation Layer (UI)         │
-├─────────────────────────────────────┤
-│     Controller Layer                │
-├─────────────────────────────────────┤
-│     Business Logic Layer (Services) │
-├─────────────────────────────────────┤
-│     Data Access Layer (Repository)  │
-├─────────────────────────────────────┤
-│     External Systems (API, DB)      │
-└─────────────────────────────────────┘
+com.stockcompare/
+├── presentation/     ← UI layer, no business logic (Main.java)
+├── service/          ← Business service interfaces and implementations
+├── domain/           ← Core business types (User, Stock, PriceData)
+└── data/             ← Repository implementations, DB access
 ```
 
-### Key Design Patterns
-- **Repository Pattern:** Abstracts data access
-- **Facade Pattern:** Simplifies complex subsystems
-- **Template Method:** Defines algorithm skeleton
-- **Adapter Pattern:** Adapts external APIs to domain model
+**Key principles applied:**
+- All business logic goes through service interfaces — the UI never talks directly to the database
+- Dependencies only point inward (Presentation → Service → Data)
+- External dependencies (SQLite, Stock API) are isolated in the Data Access layer
 
-See [Component Specification Diagram](docs/Component_Specification_Diagram.md) for details.
+### Database Schema
+SQLite database (`stockcompare.db`) with the following tables:
 
----
+| Table | Purpose |
+|-------|---------|
+| `users` | Stores registered users with `role` column (`user`/`admin`) |
+| `accounts` | Separate account table, 1:1 with users |
+| `saved_stocks` | User-saved stock symbols with date ranges |
+| `price_data` | Fetched share price records (OHLCV) |
+| `comparison_results` | Stored comparison outputs |
+| `export_files` | Record of exported files per user |
 
-##  Features
-
-### Sprint 1 (Complete: 19 Feb 2026) ✅
-- ✅ Requirements specification
-- ✅ Component architecture design
-- ✅ Abstract implementation of core interfaces
-- ✅ Domain model classes
-
-### Sprint 2 (Due: 19 Mar 2026) 🔄
-- 🔄 Clean architecture implementation
-- 🔄 Use case models and sequence diagrams
-- 🔄 Yahoo Finance API integration
-- 🔄 SQLite database persistence
-
-### Sprint 3 (Due: 24 Apr 2026) 📅
-- 📅 Compound components design
-- 📅 Domain-independent architectural styles
-- 📅 Service-Oriented Architecture (SOA)
-- 📅 Comprehensive testing suite
+### Dependencies
+| Library | Purpose |
+|---------|---------|
+| `sqlite-jdbc 3.45.1.0` | SQLite database access |
+| `gson 2.10.1` | JSON parsing from Stock API |
+| `slf4j-simple 1.7.36` | Logging |
+| `junit-jupiter 5.10.0` | Unit testing |
 
 ---
 
-## 🛠️ Technology Stack
+## GitHub Structure
 
-| Category | Technology |
-|----------|-----------|
-| **Language** | Java 11+ |
-| **Build Tool** | Maven / Gradle |
-| **Data Source** | Yahoo Finance API |
-| **Database** | SQLite (local) |
-| **Testing** | JUnit 5 |
-| **Logging** | java.util.logging |
-
-### Future Dependencies
-- **HTTP Client:** Apache HttpClient / Java 11 HttpClient
-- **JSON Parsing:** Jackson / Gson
-- **Charting:** JFreeChart / XChart
-- **Database Driver:** SQLite JDBC
+| Branch | Contents |
+|--------|----------|
+| `sprint1` | Sprint 1 — Requirements specification, initial diagrams |
+| `sprint2` | Sprint 2 — Architecture models, sequence diagrams, implementation |
 
 ---
 
-## 📁 Project Structure
+## How to Run
 
-```
-stockcompare/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── stockcompare/
-│   │   │           ├── model/          # Domain entities
-│   │   │           ├── service/        # Business logic
-│   │   │           ├── repository/     # Data access
-│   │   │           ├── controller/     # Request handlers
-│   │   │           └── view/           # UI components
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/
-│           └── com/
-│               └── stockcompare/
-├── docs/
-│   ├── requirements/
-│   ├── architecture/
-│   ├── diagrams/
-│   └── meeting-notes/
-├── .gitignore
-├── README.md
-└── pom.xml (or build.gradle)
-```
-
----
-
-##  Getting Started
-
-### Prerequisites
-- Java Development Kit (JDK) 11 or higher
-- Maven 3.6+ or Gradle 7.0+
-- Git
-
-### Installation
-
-1. **Clone the repository**
 ```bash
+# Clone the repo
 git clone https://github.com/Abdalamohamed7906/Software-Architecture-and-Design.git
-cd Software-Architecture-and-Design
-```
 
-2. **Build the project**
+# Open in IntelliJ IDEA
+# Ensure Java JDK 17+ is installed
 
-Using Maven:
-```bash
-mvn clean install
-```
-
-Using Gradle:
-```bash
-gradle build
-```
-
-3. **Run the application** (Sprint 2+)
-```bash
-# Maven
+# Run via Maven
 mvn exec:java
 
-# Gradle
-gradle run
+# Or run Main.java directly from IntelliJ
 ```
-
----
-
-## 📖 Documentation
-
-- [Requirements Specification](docs/Sprint1_Requirements_StockCompare.md)
-- [Component Specification Diagram](docs/Component_Specification_Diagram.md)
-- [Team Code of Conduct](docs/Team_Code_of_Conduct.md)
-- [Task Allocation (Asana)](docs/Sprint1_Task_Allocation_Asana.md)
-
----
-
-## Contributing
-
-We follow the **Feature Branch Workflow**:
-
-1. Create a feature branch from `develop`:
-   ```bash
-   git checkout develop
-   git pull origin develop
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes and commit:
-   ```bash
-   git add .
-   git commit -m "[FEATURE] Add description of your changes"
-   ```
-
-3. Push your branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-4. Create a Pull Request (PR) to `develop`
-   - Assign at least 2 reviewers
-   - Link related Asana task
-   - Wait for approval before merging
-
-### Commit Message Format
-```
-[TYPE] Brief description
-
-Detailed explanation if needed
-
-- Bullet points for multiple changes
-```
-
-**Types:** `[FEATURE]`, `[BUGFIX]`, `[REFACTOR]`, `[DOCS]`, `[TEST]`
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
-
-## 👥 Team
-
-| Name | Role | Responsibilities |
-|------|------|-----------------|
-| **Anwar** | Project Lead | Requirements, Domain Models, Services, Integration |
-| **Abdala** | Architecture Lead | Component Diagrams, Design Patterns, Interfaces, Submission |
-| **Meshari** | Documentation Lead | Glossary, Code of Conduct, README Updates |
-| **Ismail** | QA & Notes Lead | Meeting Notes, Testing, Documentation Organization |
-| **Omran** | DevOps Lead | Maven Setup, Git Support, Build System |
-
----
-
-## Project Timeline
-
-| Sprint | Deadline | Focus | Status |
-|--------|----------|-------|--------|
-| **Sprint 1** | 19 Feb 2026 | Requirements, Architecture, Abstract Implementation | 🔄 In Progress |
-| **Sprint 2** | 19 Mar 2026 | Clean Architecture, Use Cases, Implementation | 📅 Upcoming |
-| **Sprint 3** | 24 Apr 2026 | Compound Components, Styles, SOA, Testing | 📅 Upcoming |
-
-**Code Reviews:**
-- Sprint 1: 20 Feb 2026
-- Sprint 2: 20 Mar 2026
-- Sprint 3: 24 Apr 2026
-
-**Sprint 1 Meetings:**
--  Initial Planning: Friday, 7 Feb 2026 (Completed)
-- Mid-Sprint Check-in: Thursday, 13 Feb 2026
-- Progress Review: Friday, 14 Feb 2026, 6:00 PM
-- Final Review: Wednesday, 19 Feb 2026 (Microsoft Teams)
-- Code Review: Thursday, 20 Feb 2026
-
----
-
-## 🧪 Testing
-
-### Run Tests
-
-Using Maven:
-```bash
-mvn test
-```
-
-Using Gradle:
-```bash
-gradle test
-```
-
-### Test Coverage
-- Target: 70% code coverage minimum
-- All business logic must have unit tests
-- Integration tests for data layer (Sprint 3)
-
----
-
-## 📊 Sprint Progress
-
-### Sprint 1 Checklist
-- [x] Requirements Document
-- [x] Component Specification Diagram
-- [x] Domain Model Classes
-- [x] Repository Interfaces
-- [x] Service Interfaces
-- [x] Abstract Service Implementation
-- [x] GitHub Repository Setup
-- [x] Asana Board Setup
-- [x] Team Code of Conduct
-- [x] Code Review Preparation
-
----
-
-## 🐛 Known Issues
-
-*No known issues for Sprint 1 (abstract implementation only)*
-
-Report issues: [GitHub Issues](https://github.com/Abdalamohamed7906/Software-Architecture-and-Design/issues)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **Course Instructor:** [Instructor Name]
-- **Yahoo Finance API:** For providing stock market data
-- **Open Source Libraries:** JFreeChart, Jackson, SQLite JDBC
-
----
-
-## 📞 Contact
-
-**Team Communication:**
-- WhatsApp/MS Teams
-- GitHub Issues: [Issue Tracker](https://github.com/Abdalamohamed7906/Software-Architecture-and-Design/issues)
-- Asana Board: [https://app.asana.com/1/15441878602959/project/1213167865275390/board/1213169424196971]
-
-**Meeting Schedule:**
-- Regular check-ins: Thursdays and Fridays
-- Final reviews: Microsoft Teams (before submissions)
-
----
-
-## 📈 Project Status
-
-![Sprint Progress](https://progress-bar.dev/33/?title=Overall%20Progress&width=500)
-
-**Last Updated:** 10 February 2026  
-**Current Sprint:** Sprint 1  
-**Next Milestone:** Sprint 1 Code Review (20 Feb 2026)
-
----
-
-<div align="center">
-  <p>Built with ❤️ by the StockCompare Team</p>
-  <p><strong>Anwar • Abdala • Meshari • Ismail • Omran</strong></p>
-</div>
