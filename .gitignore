@@ -1,0 +1,5 @@
+target/
+.idea/
+*.db
+.DS_Store
+stockcompare_export_*
