@@ -1,0 +1,7 @@
+target/
+*.db
+*.db-shm
+*.db-wal
+stockcompare_export_*
+.DS_Store
+*.class
