@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.stockcompare.service.StockAnalysisServiceTest" time="0.016" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.stockcompare.service.StockAnalysisServiceTest" time="0.022" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260414150800578_3.jar /Users/fly35s/Downloads/stockcompare2 5/target/surefire 2026-04-14T15-08-00_539-jvmRun1 surefire-20260414150800578_1tmp surefire_0-20260414150800578_2tmp"/>
+    <property name="sun.java.command" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260420180230883_3.jar /Users/fly35s/Downloads/stockcompare2 5/target/surefire 2026-04-20T18-02-30_843-jvmRun1 surefire-20260420180230883_1tmp surefire_0-20260420180230883_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/fly35s/Downloads/stockcompare2 5/target/test-classes:/Users/fly35s/Downloads/stockcompare2 5/target/classes:/Users/fly35s/.m2/repository/org/xerial/sqlite-jdbc/3.45.1.0/sqlite-jdbc-3.45.1.0.jar:/Users/fly35s/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/fly35s/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar:/Users/fly35s/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/fly35s/.m2/repository/org/mockito/mockito-core/5.5.0/mockito-core-5.5.0.jar:/Users/fly35s/.m2/repository/net/bytebuddy/byte-buddy/1.14.6/byte-buddy-1.14.6.jar:/Users/fly35s/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.6/byte-buddy-agent-1.14.6.jar:/Users/fly35s/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/fly35s/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/fly35s/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/fly35s/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/fly35s/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac-aarch64.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac-aarch64.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac-aarch64.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac-aarch64.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260414150800578_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260420180230883_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="25.0.2"/>
@@ -60,20 +60,20 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="graphData_null" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.01"/>
-  <testcase name="graphData_blank" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.001"/>
-  <testcase name="graphData_valid" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.0">
+  <testcase name="graphData_null" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.014"/>
+  <testcase name="graphData_blank" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.002"/>
+  <testcase name="graphData_valid" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.001">
     <system-out><![CDATA[[StockAnalysisService] Generating graph data for AAPL
 ]]></system-out>
   </testcase>
-  <testcase name="compare_one" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.001"/>
-  <testcase name="compare_two" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.0">
+  <testcase name="compare_one" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.0"/>
+  <testcase name="compare_two" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.001">
     <system-out><![CDATA[[StockAnalysisService] Comparing: [AAPL, TSLA]
 [StockAnalysisService] Comparison complete for 2 symbols.
 ]]></system-out>
   </testcase>
-  <testcase name="compare_null" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.001"/>
-  <testcase name="compare_uppercase" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.002">
+  <testcase name="compare_null" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.0"/>
+  <testcase name="compare_uppercase" classname="com.stockcompare.service.StockAnalysisServiceTest" time="0.003">
     <system-out><![CDATA[[StockAnalysisService] Comparing: [aapl, tsla]
 [StockAnalysisService] Comparison complete for 2 symbols.
 ]]></system-out>

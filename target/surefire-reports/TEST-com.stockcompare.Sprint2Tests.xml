@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.stockcompare.Sprint2Tests" time="0.065" tests="33" errors="0" skipped="1" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.stockcompare.Sprint2Tests" time="0.075" tests="33" errors="0" skipped="1" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260414150800578_3.jar /Users/fly35s/Downloads/stockcompare2 5/target/surefire 2026-04-14T15-08-00_539-jvmRun1 surefire-20260414150800578_1tmp surefire_0-20260414150800578_2tmp"/>
+    <property name="sun.java.command" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260420180230883_3.jar /Users/fly35s/Downloads/stockcompare2 5/target/surefire 2026-04-20T18-02-30_843-jvmRun1 surefire-20260420180230883_1tmp surefire_0-20260420180230883_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/fly35s/Downloads/stockcompare2 5/target/test-classes:/Users/fly35s/Downloads/stockcompare2 5/target/classes:/Users/fly35s/.m2/repository/org/xerial/sqlite-jdbc/3.45.1.0/sqlite-jdbc-3.45.1.0.jar:/Users/fly35s/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/fly35s/.m2/repository/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar:/Users/fly35s/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/Users/fly35s/.m2/repository/org/mockito/mockito-core/5.5.0/mockito-core-5.5.0.jar:/Users/fly35s/.m2/repository/net/bytebuddy/byte-buddy/1.14.6/byte-buddy-1.14.6.jar:/Users/fly35s/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.6/byte-buddy-agent-1.14.6.jar:/Users/fly35s/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/fly35s/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/fly35s/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/fly35s/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/fly35s/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/fly35s/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-mac-aarch64.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-mac-aarch64.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-mac-aarch64.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/Users/fly35s/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-mac-aarch64.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260414150800578_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/fly35s/Downloads/stockcompare2 5/target/surefire/surefirebooter-20260420180230883_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="25.0.2"/>
@@ -60,22 +60,22 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="validateDateRange_nullDates_returnsFalse" classname="com.stockcompare.Sprint2Tests" time="0.015"/>
-  <testcase name="saveStock_validData_returnsSavedStock" classname="com.stockcompare.Sprint2Tests" time="0.012">
-    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='fcc925dc-0c4c-4a88-8ad6-ffed6d6fc27d', symbol='AAPL', range=2026-04-09→2026-04-14, records=3}
+  <testcase name="validateDateRange_nullDates_returnsFalse" classname="com.stockcompare.Sprint2Tests" time="0.016"/>
+  <testcase name="saveStock_validData_returnsSavedStock" classname="com.stockcompare.Sprint2Tests" time="0.014">
+    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='814ba048-3e4d-4371-b32e-12beb7707649', symbol='AAPL', range=2026-04-15→2026-04-20, records=3}
 ]]></system-out>
   </testcase>
   <testcase name="loadStockData_returnsCorrectData" classname="com.stockcompare.Sprint2Tests" time="0.001">
-    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='f32bc2ff-196c-4365-94b8-a31412abd86c', symbol='TSLA', range=2026-04-09→2026-04-14, records=3}
+    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='8a8a8d64-faf0-4ac2-850d-cd0f46881c3f', symbol='TSLA', range=2026-04-15→2026-04-20, records=3}
 ]]></system-out>
   </testcase>
   <testcase name="manageAccount_updateEmail_succeeds" classname="com.stockcompare.Sprint2Tests" time="0.002"/>
   <testcase name="createAccount_duplicateEmail_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="exportData_unsupportedFormat_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.002"/>
-  <testcase name="createAccount_validInput_returnsAccount" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
+  <testcase name="createAccount_validInput_returnsAccount" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="deleteStock_existingStock_returnsTrue" classname="com.stockcompare.Sprint2Tests" time="0.001">
-    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='ee82c720-2979-4e58-b31d-b57cc4f0ece6', symbol='AAPL', range=2026-04-09→2026-04-14, records=3}
-[SavedStockService] Delete ee82c720-2979-4e58-b31d-b57cc4f0ece6: success
+    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='3ce2fb2b-fc5f-4518-926d-cbcefe36bd9d', symbol='AAPL', range=2026-04-15→2026-04-20, records=3}
+[SavedStockService] Delete 3ce2fb2b-fc5f-4518-926d-cbcefe36bd9d: success
 ]]></system-out>
   </testcase>
   <testcase name="searchStock_blankQuery_throwsException_disabled" classname="com.stockcompare.Sprint2Tests" time="0.0">
@@ -90,43 +90,43 @@
 ]]></skipped>
   </testcase>
   <testcase name="validateDateRange_over2Years_returnsFalse" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
-  <testcase name="retrievePriceData_returnsNonEmptyList" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
+  <testcase name="retrievePriceData_returnsNonEmptyList" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="createAccount_invalidEmail_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="deleteStock_nonExistent_returnsFalse" classname="com.stockcompare.Sprint2Tests" time="0.0">
     <system-out><![CDATA[[SavedStockService] Delete does-not-exist: failed
 ]]></system-out>
   </testcase>
-  <testcase name="loadSavedStocks_returnsCorrectUser" classname="com.stockcompare.Sprint2Tests" time="0.001">
-    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='179132f0-9667-4425-9313-8f800d275a2e', symbol='AAPL', range=2026-04-09→2026-04-14, records=3}
-[SavedStockService] Saved: SavedStock{id='526c7816-9cc9-4741-b294-c13df6155751', symbol='MSFT', range=2026-04-09→2026-04-14, records=3}
+  <testcase name="loadSavedStocks_returnsCorrectUser" classname="com.stockcompare.Sprint2Tests" time="0.002">
+    <system-out><![CDATA[[SavedStockService] Saved: SavedStock{id='75a0b142-e450-4371-85f6-6cea098588bb', symbol='AAPL', range=2026-04-15→2026-04-20, records=3}
+[SavedStockService] Saved: SavedStock{id='303da840-5a13-454a-8a4a-764ba6c8b68f', symbol='MSFT', range=2026-04-15→2026-04-20, records=3}
 [SavedStockService] Loaded 2 saved stocks.
 ]]></system-out>
   </testcase>
-  <testcase name="updateService_refreshSymbol_returnsTrue" classname="com.stockcompare.Sprint2Tests" time="0.0">
+  <testcase name="updateService_refreshSymbol_returnsTrue" classname="com.stockcompare.Sprint2Tests" time="0.002">
     <system-out><![CDATA[[UpdateService] Refreshing single symbol: AAPL
 ]]></system-out>
   </testcase>
   <testcase name="exportData_emptyList_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
-  <testcase name="manageAccount_getUserDetails_returnsCorrectUser" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
-  <testcase name="updateService_refreshMultiple_returnsTrue" classname="com.stockcompare.Sprint2Tests" time="0.0">
+  <testcase name="manageAccount_getUserDetails_returnsCorrectUser" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
+  <testcase name="updateService_refreshMultiple_returnsTrue" classname="com.stockcompare.Sprint2Tests" time="0.001">
     <system-out><![CDATA[[UpdateService] Starting update for 3 symbols...
 [UpdateService] Update complete. Success: true
 ]]></system-out>
   </testcase>
   <testcase name="deleteStock_blankId_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="searchStock_validQuery_returnsResults" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
-  <testcase name="createAccount_shortPassword_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
-  <testcase name="manageAccount_notFound_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
+  <testcase name="createAccount_shortPassword_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
+  <testcase name="manageAccount_notFound_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
   <testcase name="createAccount_blankUsername_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="validateDateRange_valid_returnsTrue" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
-  <testcase name="saveStock_emptyData_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
+  <testcase name="saveStock_emptyData_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
   <testcase name="exportData_jsonFormat_createsFile" classname="com.stockcompare.Sprint2Tests" time="0.001">
-    <system-out><![CDATA[[ExportService] Generated: /Users/fly35s/Downloads/stockcompare2 5/stockcompare_export_1776175680846.json
+    <system-out><![CDATA[[ExportService] Generated: /Users/fly35s/Downloads/stockcompare2 5/stockcompare_export_1776704551182.json
 ]]></system-out>
   </testcase>
   <testcase name="compareShares_oneSymbol_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
   <testcase name="exportData_csvFormat_createsFile" classname="com.stockcompare.Sprint2Tests" time="0.001">
-    <system-out><![CDATA[[ExportService] Generated: /Users/fly35s/Downloads/stockcompare2 5/stockcompare_export_1776175680848.csv
+    <system-out><![CDATA[[ExportService] Generated: /Users/fly35s/Downloads/stockcompare2 5/stockcompare_export_1776704551184.csv
 ]]></system-out>
   </testcase>
   <testcase name="saveStock_noUserId_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.0"/>
@@ -136,7 +136,7 @@
 ]]></system-out>
   </testcase>
   <testcase name="viewGraph_blankSymbol_throwsException" classname="com.stockcompare.Sprint2Tests" time="0.001"/>
-  <testcase name="compareShares_twoSymbols_returnsTwoSeries" classname="com.stockcompare.Sprint2Tests" time="0.0">
+  <testcase name="compareShares_twoSymbols_returnsTwoSeries" classname="com.stockcompare.Sprint2Tests" time="0.001">
     <system-out><![CDATA[[StockAnalysisService] Comparing: [AAPL, MSFT]
 [StockAnalysisService] Comparison complete for 2 symbols.
 ]]></system-out>
